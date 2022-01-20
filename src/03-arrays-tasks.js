@@ -429,7 +429,7 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(arr) {
+function sortCitiesArray(/* arr */) {
   // function sort(property) {
   //   let sortOrder = 1;
   //   if (property[0] === '-') {
@@ -443,14 +443,14 @@ function sortCitiesArray(arr) {
   //     return a[property].localeCompare(b[property]);
   //   };
   // }
-  const item = arr.map((el) => el);
+  // const item = arr.map((el) => el);
   // let country = item.country;
   // let city = item.city;
   // return arr.sort(sort('country')).map((el) => if (item.country === (item += 1).country));
   // if (item.country === (item += 1).country) {
   //
   // }
-  return arr.sort(item.country);
+  // return arr.sort(item.country);
 }
 
 /**
@@ -537,13 +537,13 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(array, keySelector, valueSelector) {
-  return array.reduce((obj, item) => {
-    const key = keySelector(item);
-    obj[key] = obj[key] || [];
-    obj[key].push(valueSelector(item));
-    return obj;
-  }, {});
+function group(/* array, keySelector, valueSelector */) {
+  // return array.reduce((obj, item) => {
+  //   const key = keySelector(item);
+  //   obj[key] = obj[key] || [];
+  //   obj[key].push(valueSelector(item));
+  //   return obj;
+  // }, {});
 }
 
 
@@ -577,8 +577,8 @@ function selectMany(arr, childrenSelector) {
  *   ['one','two','three'], [2]       => 'three'  (arr[2])
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
-function getElementByIndexes(arr, indexes) {
-  return arr[indexes];
+function getElementByIndexes(/* arr, indexes */) {
+  // return arr[indexes];
 }
 
 

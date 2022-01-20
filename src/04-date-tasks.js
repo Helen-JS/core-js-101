@@ -35,7 +35,7 @@ function parseDataFromRfc2822(value) {
  *    '2016-01-19T08:07:37Z' => Date()
  */
 function parseDataFromIso8601(value) {
-  return new Date(value);
+  return Date.parse(value);
 }
 
 
@@ -73,12 +73,12 @@ function isLeapYear(/* date */) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,10,0,0,250)     => "00:00:00.250"
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
-function timeSpanToString(startDate, endDate) {
-  const oneDay = 1000 * 60 * 60 * 24;
-  const startDateMs = startDate.getTime();
-  const endDateMs = endDate.getTime();
-  const differenceMs = endDateMs - startDateMs;
-  return (Math.round(differenceMs / oneDay)).toString();
+function timeSpanToString(/* startDate, endDate */) {
+  // const oneDay = 1000 * 60 * 60 * 24;
+  // const startDateMs = new Date(startDate).getTime();
+  // const endDateMs = new Date(endDate).getTime();
+  // const differenceMs = endDateMs - startDateMs;
+  // return Math.round(differenceMs).toString();
 }
 
 
