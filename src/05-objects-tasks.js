@@ -25,7 +25,7 @@ function Rectangle(width, height) {
     width,
     height,
   };
-  r.getArea = function () {
+  r.getArea = function calculateArea() {
     return width * height;
   };
   return r;

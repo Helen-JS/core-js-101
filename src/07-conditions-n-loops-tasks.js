@@ -100,8 +100,7 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a, b, c) {
-  if (a + b > c && a + c > b && b + c > a) return true;
-  return false;
+  return a + b > c && a + c > b && b + c > a;
 }
 
 
@@ -146,8 +145,7 @@ function doRectanglesOverlap(rect1, rect2) {
   const left2 = rect2.left;
   const right1 = left1 + rect1.width;
   const right2 = left2 + rect2.width;
-  if (left1 >= right2 || top1 >= bottom2 || right1 <= left2 || bottom1 <= top2) return false;
-  return true;
+  return !(left1 >= right2 || top1 >= bottom2 || right1 <= left2 || bottom1 <= top2);
 }
 
 
@@ -287,7 +285,7 @@ function reverseInteger(num) {
  *
  * See algorithm here : https://en.wikipedia.org/wiki/Luhn_algorithm
  *
- * @param {number} cnn
+ * @param {number} ccn
  * @return {boolean}
  *
  * @example:
@@ -310,7 +308,7 @@ function isCreditCardNumber(ccn) {
     newDigits = digits.map((digit, index) => (index % 2 === 1 ? digit * 2 : digit));
   }
   newDigits = newDigits.map((digit) => (digit > 9 ? digit - 9 : digit));
-  const sum = newDigits.reduce((acc, digit) => acc += digit, 0);
+  const sum = newDigits.reduce((acc, digit) => acc + digit, 0);
   return sum % 10 === 0;
 }
 
@@ -319,7 +317,7 @@ function isCreditCardNumber(ccn) {
  *   step1 : find sum of all digits
  *   step2 : if sum > 9 then goto step1 otherwise return the sum
  *
- * @param {number} n
+ * @param {number} num
  * @return {number}
  *
  * @example:
